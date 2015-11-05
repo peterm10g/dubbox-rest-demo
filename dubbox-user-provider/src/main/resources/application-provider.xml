@@ -9,8 +9,8 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-	<dubbo:protocol name="rest" port="10880" server="tomcat" extension="com.ericsson.csp.tsc.api.util.TscValidationExceptionMapper"/>
+	<dubbo:protocol name="rest" port="10880" server="tomcat" extension="top.crowley.dubbox.rest.demo.api.util.ValidationExceptionMapper"/>
 	
-	<dubbo:service interface="com.ericsson.csp.tsc.api.resource.TscUserResource" ref="tscUserService" protocol="rest" validation="true"/>
-	<bean id="tscUserService" class="com.ericsson.csp.tsc.user.provider.resource.TscUserResourceImpl" />
+	<dubbo:service interface="top.crowley.dubbox.rest.demo.api.resource.UserResource" ref="userService" protocol="rest" validation="true"/>
+	<bean id="userService" class="top.crowley.dubbox.rest.demo.provider.resource.UserResourceImpl" />
 </beans>
