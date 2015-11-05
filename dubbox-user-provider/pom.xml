@@ -8,7 +8,7 @@
 	<name>dubbox-user-provider</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-
+		<tomcat_embed_version>8.0.11</tomcat_embed_version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -22,11 +22,31 @@
 			<artifactId>rest-api</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+ 		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>${tomcat_embed_version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-logging-juli</artifactId>
+			<version>${tomcat_embed_version}</version>
+		</dependency>
+			<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>2.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>javax.el</artifactId>
+			<version>2.2.4</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>dubbox-user-provider</finalName>
 		<plugins>
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.1</version>
@@ -34,10 +54,10 @@
 					<port>8080</port>
 					<path>/</path>
 					<uriEncoding>UTF-8</uriEncoding>
-					<finalName>tsc-uv-server</finalName>
+					<finalName>dubbox-user-provider</finalName>
 					<server>tomcat7</server>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			
 			<plugin>
             	<groupId>org.apache.maven.plugins</groupId>
