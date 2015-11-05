@@ -19,12 +19,7 @@ public class AppMain {
 
         context = new ClassPathXmlApplicationContext(new String[] { configFile });
         context.start();
-        try {
-            Thread.sleep(60*60*1000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        com.alibaba.dubbo.container.Main.main(args);
         LOGGER.info("========Application Started========");
     }
 
