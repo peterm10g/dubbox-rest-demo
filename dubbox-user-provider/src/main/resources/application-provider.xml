@@ -9,7 +9,9 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-	<dubbo:protocol name="rest" port="10880" server="tomcat" extension="top.crowley.dubbox.rest.demo.api.util.ValidationExceptionMapper"/>
+	<dubbo:protocol name="rest" port="10880" server="tomcat" 
+	extension="top.crowley.dubbox.rest.demo.api.util.ValidationExceptionMapper,
+	top.crowley.dubbox.rest.demo.api.util.CacheControlFilter"/>
 	
 	<dubbo:service interface="top.crowley.dubbox.rest.demo.api.resource.UserResource" ref="userService" protocol="rest" validation="true"/>
 	<bean id="userService" class="top.crowley.dubbox.rest.demo.provider.resource.UserResourceImpl" />
